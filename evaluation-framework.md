@@ -2,261 +2,126 @@
 
 ## 1. Purpose
 
-This framework provides a structured and repeatable method for evaluating the quality of AI-generated responses.
+This framework defines a structured method for evaluating and comparing AI-generated responses.
 
-The objective is to ensure that evaluations are consistent, transparent, and supported by clear reasoning rather than subjective preference.
-
----
-
-## 2. Evaluation Principles
-
-Each response should be evaluated independently based on the requirements of the original prompt.
-
-Evaluators should:
-
-- Focus on the content rather than personal preference.
-- Apply the same standards to every response.
-- Verify factual claims when necessary.
-- Consider both strengths and weaknesses.
-- Provide clear justification for assigned scores.
-- Avoid allowing writing style alone to influence the overall evaluation.
+The objective is to assess response quality using consistent criteria rather than relying only on whether an answer appears correct.
 
 ---
 
-## 3. Evaluation Criteria
+## 2. Evaluation Criteria
 
-### 3.1 Accuracy
+Each AI response is evaluated using six criteria.
 
-**Definition:**  
-Measures whether the response contains factually correct information and avoids unsupported or misleading claims.
+### 2.1 Accuracy
 
-**Questions to Consider:**
+Measures whether the response contains a correct answer based on the available facts, evidence, or logical constraints.
 
-- Are the facts correct?
-- Are important claims supported?
-- Does the response contain misinformation?
-- Are there unsupported assumptions?
+**Scoring:**
 
-**Scoring Guide:**
-
-| Score | Description |
-|---|---|
-| 5 | Fully accurate with no significant factual errors |
-| 4 | Mostly accurate with minor issues |
-| 3 | Generally acceptable but contains some questionable information |
-| 2 | Contains significant inaccuracies |
-| 1 | Contains major factual errors or misinformation |
+- **5** — Fully correct
+- **4** — Mostly correct with a minor issue
+- **3** — Partially correct
+- **2** — Significant errors
+- **1** — Fundamentally incorrect
 
 ---
 
-### 3.2 Relevance
+### 2.2 Relevance
 
-**Definition:**  
-Measures how directly the response addresses the user's request.
+Measures whether the response directly addresses the user's request without unnecessary or unrelated information.
 
-**Questions to Consider:**
+**Scoring:**
 
-- Does the response answer the actual question?
-- Does it include unnecessary information?
-- Does it remain focused on the requested task?
-
-**Scoring Guide:**
-
-| Score | Description |
-|---|---|
-| 5 | Directly and completely addresses the request |
-| 4 | Mostly relevant with minor unnecessary information |
-| 3 | Partially relevant |
-| 2 | Frequently unfocused or includes excessive irrelevant information |
-| 1 | Does not adequately address the request |
+- **5** — Directly relevant
+- **4** — Mostly relevant
+- **3** — Some unnecessary information
+- **2** — Frequently off-topic
+- **1** — Does not address the task
 
 ---
 
-### 3.3 Completeness
+### 2.3 Completeness
 
-**Definition:**  
-Measures whether the response provides sufficient information to fully address the task.
+Measures whether the response addresses all required components of the prompt.
 
-**Questions to Consider:**
+**Scoring:**
 
-- Are important parts of the question answered?
-- Is critical information missing?
-- Does the response require unnecessary follow-up questions?
-
-**Scoring Guide:**
-
-| Score | Description |
-|---|---|
-| 5 | Fully addresses all important aspects of the task |
-| 4 | Addresses most aspects with minor omissions |
-| 3 | Addresses the basic request but lacks important details |
-| 2 | Significant information is missing |
-| 1 | Fails to provide sufficient information |
+- **5** — Fully addresses all requirements
+- **4** — Minor omission
+- **3** — Some requirements addressed
+- **2** — Major requirements missing
+- **1** — Requirements largely ignored
 
 ---
 
-### 3.4 Clarity
+### 2.4 Clarity
 
-**Definition:**  
-Measures how easy the response is to understand.
+Measures how clearly and understandably the response communicates its answer.
 
-**Questions to Consider:**
+Factors include:
 
-- Is the language understandable?
-- Is the response well-organized?
-- Are explanations clear?
-- Is unnecessary complexity avoided?
+- Organization
+- Readability
+- Explanation quality
+- Appropriate language
+- Logical presentation
 
-**Scoring Guide:**
+**Scoring:**
 
-| Score | Description |
-|---|---|
-| 5 | Exceptionally clear and well-structured |
-| 4 | Clear with minor organizational issues |
-| 3 | Understandable but could be clearer |
-| 2 | Difficult to follow |
-| 1 | Extremely unclear or poorly structured |
+- **5** — Extremely clear
+- **4** — Clear with minor issues
+- **3** — Understandable but could be improved
+- **2** — Difficult to follow
+- **1** — Very unclear
 
 ---
 
-### 3.5 Logical Reasoning
+### 2.5 Logical Reasoning
 
-**Definition:**  
-Measures whether the response demonstrates coherent reasoning and logical consistency.
+Measures whether the reasoning correctly connects the available information to the conclusion.
 
-**Questions to Consider:**
+This criterion is especially important for reasoning, constraint, mathematical, and analytical tasks.
 
-- Do conclusions follow from the information provided?
-- Are there contradictions?
-- Are explanations logically structured?
-- Does the response make unsupported logical jumps?
+**Scoring:**
 
-**Scoring Guide:**
-
-| Score | Description |
-|---|---|
-| 5 | Highly logical and internally consistent |
-| 4 | Mostly logical with minor reasoning gaps |
-| 3 | Acceptable reasoning but noticeable gaps exist |
-| 2 | Significant reasoning problems |
-| 1 | Illogical, contradictory, or unsupported reasoning |
+- **5** — Reasoning is logically sound
+- **4** — Mostly sound with a minor weakness
+- **3** — Mixed reasoning quality
+- **2** — Significant reasoning errors
+- **1** — Fundamentally invalid reasoning
 
 ---
 
-### 3.6 Instruction Following
+### 2.6 Instruction Following
 
-**Definition:**  
-Measures whether the AI follows explicit instructions and constraints in the original prompt.
+Measures whether the response follows the explicit requirements provided in the prompt.
 
-**Questions to Consider:**
+Examples include:
 
-- Did the response follow all instructions?
-- Did it respect formatting requirements?
-- Did it follow length constraints?
-- Did it complete the requested task?
+- Word limits
+- Required structure
+- Number of examples
+- Requested format
+- Specific output requirements
 
-**Scoring Guide:**
+**Scoring:**
 
-| Score | Description |
-|---|---|
-| 5 | Follows all instructions precisely |
-| 4 | Follows most instructions with minor deviations |
-| 3 | Follows basic instructions but misses some requirements |
-| 2 | Fails to follow important instructions |
-| 1 | Ignores major instructions or fails the task |
+- **5** — Follows all instructions
+- **4** — Minor deviation
+- **3** — Several deviations
+- **2** — Major instructions ignored
+- **1** — Does not follow the task requirements
 
 ---
 
-## 4. Evaluation Process
+# 3. Scoring System
 
-Each AI response will be evaluated using the following process:
+Each criterion receives a score from **1 to 5**.
 
-1. Read and understand the original prompt.
-2. Identify explicit instructions and constraints.
-3. Review the AI-generated response independently.
-4. Evaluate the response against each criterion.
-5. Assign a score from 1 to 5.
-6. Document evidence supporting each score.
-7. Identify critical errors or weaknesses.
-8. Calculate the overall score.
-9. Compare responses when multiple models are tested.
-10. Produce a final ranking with justification.
+There are six evaluation criteria:
 
----
-
-## 5. Overall Scoring
-
-The baseline overall score is calculated by averaging the six evaluation criteria:
-
-**Overall Score = (Accuracy + Relevance + Completeness + Clarity + Logical Reasoning + Instruction Following) / 6**
-
-However, the numerical score should not replace human judgment.
-
-A response containing a major factual error, harmful misinformation, or serious instruction violation should be flagged even if its average score is high.
-
----
-
-## 6. Evaluation Output Template
-
-Each evaluation should contain:
-
-### Prompt
-
-[Original test prompt]
-
-### Model
-
-[Name of AI model]
-
-### Response
-
-[AI-generated response]
-
-### Evaluation
-
-| Criteria | Score (1–5) | Justification |
-|---|---|---|
-| Accuracy | | |
-| Relevance | | |
-| Completeness | | |
-| Clarity | | |
-| Logical Reasoning | | |
-| Instruction Following | | |
-
-### Overall Score
-
-[Score]
-
-### Key Strengths
-
-- 
-- 
-- 
-
-### Key Weaknesses
-
-- 
-- 
-- 
-
-### Final Assessment
-
-[Brief overall evaluation and ranking decision]
-
----
-
-## 7. Limitations
-
-This framework includes subjective judgment. Different evaluators may assign slightly different scores depending on interpretation.
-
-To improve consistency:
-
-- Evaluation guidelines should be clearly defined.
-- Evaluators should document evidence for scores.
-- Multiple evaluators can be used for comparison.
-- Calibration exercises can help align scoring standards.
-
----
+```text
+6 criteria × 5 maximum points = 30 points
 
 ## Author
 
