@@ -94,7 +94,161 @@ However, qualitative analysis revealed differences in:
 This highlights an important principle in AI evaluation:
 
 > Numerical scoring should be supported by qualitative justification and evidence-based observations.
+---
 
+# Findings from Test Case 02
+
+## Test Task
+
+The second test case evaluated the ability of four AI models to solve a logical reasoning problem containing contradictory constraints.
+
+The models evaluated were:
+
+- ChatGPT
+- Claude
+- DeepSeek
+- Google Gemini
+
+The same prompt was provided to each model without modification.
+
+---
+
+## Ground Truth
+
+Independent validation established that the puzzle has no valid solution.
+
+Amina is explicitly prevented from owning:
+
+- The cat
+- The dog
+- The rabbit
+
+Because every person must own one of the three pets, the constraints are inconsistent.
+
+Therefore, the correct response is to identify the contradiction rather than assign pets to the participants.
+
+---
+
+## Key Finding 1: Three Models Detected the Contradiction
+
+ChatGPT, Claude, and DeepSeek correctly identified that the constraints were inconsistent.
+
+All three models concluded that no valid assignment exists.
+
+This demonstrates successful constraint analysis and logical consistency checking.
+
+---
+
+## Key Finding 2: Gemini Produced an Invalid Assignment
+
+Google Gemini incorrectly assigned the cat to Amina.
+
+This directly violated clue 1, which states that Amina does not own the cat.
+
+The response therefore failed to recognize the contradiction between clue 1 and clue 4.
+
+---
+
+## Key Finding 3: Clear Writing Does Not Guarantee Correctness
+
+Gemini's response was clearly structured and easy to follow, but its conclusion was incorrect.
+
+This demonstrates why AI evaluation should assess reasoning and factual correctness separately from presentation quality.
+
+A response can appear convincing while still violating an explicit constraint.
+
+---
+
+## Key Finding 4: Constraint Verification Is Essential
+
+The strongest responses effectively checked their deductions against the complete set of constraints.
+
+DeepSeek demonstrated this particularly clearly by first deriving the only possible pet from one constraint and then checking that result against another constraint.
+
+This verification exposed the contradiction.
+
+---
+
+## Test Case 02 Score Comparison
+
+| Model | Total | Average | Result |
+|---|---:|---:|---|
+| ChatGPT | 30/30 | 5.0/5 | Correct |
+| Claude | 30/30 | 5.0/5 | Correct |
+| DeepSeek | 30/30 | 5.0/5 | Correct |
+| Google Gemini | 15/30 | 2.5/5 | Incorrect |
+
+---
+
+# Cross-Test Findings
+
+After two test cases, several observations have emerged.
+
+## Finding 1: Model Performance Depends on Task Type
+
+All four models performed strongly on the straightforward factual explanation task in Test Case 01.
+
+However, Test Case 02 exposed a significant difference in logical constraint handling.
+
+This demonstrates the importance of evaluating models across multiple task categories rather than relying on a single benchmark.
+
+---
+
+## Finding 2: Identical Scores Can Hide Qualitative Differences
+
+Test Case 01 produced identical scores across all four models, but differences in communication style, structure, and explanatory depth were still observable.
+
+Therefore, numerical scoring should be accompanied by qualitative analysis.
+
+---
+
+## Finding 3: Failure Analysis Provides Valuable Evaluation Evidence
+
+Test Case 02 produced a clear model failure.
+
+Instead of simply labeling the response "wrong," the evaluation identified:
+
+1. The exact constraint that was violated.
+2. The point where the reasoning failed.
+3. The effect of the error on the final answer.
+4. The reasoning behavior that could have prevented the failure.
+
+This provides more useful information than a score alone.
+
+---
+
+## Finding 4: Ground Truth Validation Should Precede Model Evaluation
+
+The logical contradiction in Test Case 02 was identified before collecting and scoring model responses.
+
+This ensured that model outputs were evaluated against an independently established reference rather than against another model's answer.
+
+---
+
+# Current Evaluation Summary
+
+| Test Case | Category | Main Result |
+|---|---|---|
+| Test Case 01 | Factual Explanation | All models performed strongly |
+| Test Case 02 | Logical Reasoning | Three models detected the contradiction; Gemini failed |
+
+---
+
+# Next Research Direction
+
+Additional test cases will be added to determine whether the observed differences persist across other task categories.
+
+Future evaluations will examine:
+
+- Strict instruction following
+- Factual verification
+- Hallucination detection
+- Summarization
+- Complex reasoning
+- Information extraction
+- Ambiguous instructions
+
+A larger evaluation set will provide stronger evidence for comparative analysis.
 ---
 
 # Evaluation Insights
