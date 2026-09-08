@@ -122,9 +122,3 @@ There are six evaluation criteria:
 
 ```text
 6 criteria × 5 maximum points = 30 points
-
-## Author
-
-**Jamiu Ibrahim Adejumobi**
-
-AI Generalist | AI Evaluation & Research | Prompt Engineering
